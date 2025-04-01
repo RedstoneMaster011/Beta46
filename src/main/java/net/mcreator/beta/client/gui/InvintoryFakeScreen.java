@@ -41,7 +41,7 @@ public class InvintoryFakeScreen extends AbstractContainerScreen<InvintoryFakeMe
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		if (PlayerDisplayFakeProcedure.execute(entity) instanceof LivingEntity livingEntity) {
-			InventoryScreen.renderEntityInInventoryFollowsAngle(guiGraphics, this.leftPos + 49, this.topPos + 68, 30, 0f, 0, livingEntity);
+			InventoryScreen.renderEntityInInventoryFollowsAngle(guiGraphics, this.leftPos + 49, this.topPos + 72, 30, 0f, 0, livingEntity);
 		}
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -52,6 +52,19 @@ public class InvintoryFakeScreen extends AbstractContainerScreen<InvintoryFakeMe
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/blank.png"), this.leftPos + 30, this.topPos + 14, 0, 0, 32, 64, 32, 64);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/blank.png"), this.leftPos + 30, this.topPos + 6, 0, 0, 32, 64, 32, 64);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/blank.png"), this.leftPos + 37, this.topPos + 5, 0, 0, 32, 64, 32, 64);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/blank.png"), this.leftPos + 30, this.topPos + 4, 0, 0, 32, 64, 32, 64);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/blank.png"), this.leftPos + 37, this.topPos + 14, 0, 0, 32, 64, 32, 64);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/blank.png"), this.leftPos + 37, this.topPos + 4, 0, 0, 32, 64, 32, 64);
+
 		RenderSystem.disableBlend();
 	}
 

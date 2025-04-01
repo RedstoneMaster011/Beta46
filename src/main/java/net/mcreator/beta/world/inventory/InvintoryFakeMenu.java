@@ -79,7 +79,7 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 43, 13) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 152, 61) {
 			private final int slot = 0;
 
 			@Override
@@ -124,7 +124,7 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
-		InvintoryFakeThisGUIIsOpenedProcedure.execute(entity);
+		InvintoryFakeThisGUIIsOpenedProcedure.execute(world, entity);
 	}
 
 	@Override

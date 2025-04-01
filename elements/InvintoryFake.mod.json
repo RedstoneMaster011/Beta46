@@ -20,7 +20,7 @@
           "rotationX": 0,
           "followMouseMovement": false,
           "x": 165,
-          "y": 85,
+          "y": 89,
           "locked": false
         }
       },
@@ -38,8 +38,8 @@
             "fixedValue": true
           },
           "dropItemsWhenNotBound": true,
-          "x": 168,
-          "y": 49,
+          "x": 277,
+          "y": 97,
           "locked": false
         }
       },
@@ -211,6 +211,66 @@
           "dropItemsWhenNotBound": true,
           "x": 250,
           "y": 49,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blank.png",
+          "use1Xscale": true,
+          "x": 156,
+          "y": 51,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blank.png",
+          "use1Xscale": true,
+          "x": 156,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blank.png",
+          "use1Xscale": true,
+          "x": 163,
+          "y": 42,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blank.png",
+          "use1Xscale": true,
+          "x": 156,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blank.png",
+          "use1Xscale": true,
+          "x": 163,
+          "y": 51,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blank.png",
+          "use1Xscale": true,
+          "x": 163,
+          "y": 41,
           "locked": false
         }
       }
