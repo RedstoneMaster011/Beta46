@@ -7,9 +7,34 @@
     "height": 166,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
-    "renderBgLayer": true,
+    "renderBgLayer": false,
     "doesPauseGame": false,
-    "components": [],
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "inventory.png",
+          "use1Xscale": false,
+          "x": 126,
+          "y": 37,
+          "locked": false
+        }
+      },
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "PlayerDisplayFake"
+          },
+          "scale": 30,
+          "rotationX": 0,
+          "followMouseMovement": false,
+          "x": 166,
+          "y": 87,
+          "locked": false
+        }
+      }
+    ],
     "gridSettings": {
       "sx": 18,
       "sy": 18,

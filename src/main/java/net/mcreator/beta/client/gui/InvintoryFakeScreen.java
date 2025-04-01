@@ -3,12 +3,15 @@ package net.mcreator.beta.client.gui;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.beta.world.inventory.InvintoryFakeMenu;
+import net.mcreator.beta.procedures.PlayerDisplayFakeProcedure;
 
 import java.util.HashMap;
 
@@ -31,12 +34,13 @@ public class InvintoryFakeScreen extends AbstractContainerScreen<InvintoryFakeMe
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("beta:textures/screens/invintory_fake.png");
-
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		if (PlayerDisplayFakeProcedure.execute(entity) instanceof LivingEntity livingEntity) {
+			InventoryScreen.renderEntityInInventoryFollowsAngle(guiGraphics, this.leftPos + 50, this.topPos + 70, 30, 0f, 0, livingEntity);
+		}
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
@@ -45,7 +49,9 @@ public class InvintoryFakeScreen extends AbstractContainerScreen<InvintoryFakeMe
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+
+		guiGraphics.blit(new ResourceLocation("beta:textures/screens/inventory.png"), this.leftPos + 0, this.topPos + 0, 0, 0, 256, 256, 256, 256);
+
 		RenderSystem.disableBlend();
 	}
 
