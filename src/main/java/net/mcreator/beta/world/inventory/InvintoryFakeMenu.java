@@ -7,6 +7,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
@@ -43,7 +44,7 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 		super(BetaModMenus.INVINTORY_FAKE.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(1);
+		this.internal = new ItemStackHandler(10);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -78,7 +79,7 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 42, 16) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 43, 13) {
 			private final int slot = 0;
 
 			@Override
@@ -87,9 +88,36 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 			}
 
 			@Override
-			public boolean mayPlace(ItemStack itemstack) {
-				return false;
+			public boolean mayPlace(ItemStack stack) {
+				return Blocks.SAND.asItem() == stack.getItem();
 			}
+		}));
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 7, 6) {
+			private final int slot = 1;
+		}));
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 7, 25) {
+			private final int slot = 2;
+		}));
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 7, 44) {
+			private final int slot = 3;
+		}));
+		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 7, 63) {
+			private final int slot = 4;
+		}));
+		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 75, 63) {
+			private final int slot = 5;
+		}));
+		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 144, 13) {
+			private final int slot = 6;
+		}));
+		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 144, 32) {
+			private final int slot = 7;
+		}));
+		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 125, 32) {
+			private final int slot = 8;
+		}));
+		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 125, 13) {
+			private final int slot = 9;
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
@@ -119,16 +147,16 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 1) {
-				if (!this.moveItemStackTo(itemstack1, 1, this.slots.size(), true))
+			if (index < 10) {
+				if (!this.moveItemStackTo(itemstack1, 10, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
-				if (index < 1 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 1 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 10, false)) {
+				if (index < 10 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 10 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 1, 1 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 10, 10 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
