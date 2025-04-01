@@ -15,7 +15,7 @@
     {
       "name": "SandControl",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "sand_control",
       "metadata": {
