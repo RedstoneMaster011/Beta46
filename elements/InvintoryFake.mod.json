@@ -33,8 +33,30 @@
           "y": 87,
           "locked": false
         }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "Blocks.SAND#0"
+          },
+          "disablePlacement": {
+            "fixedValue": true
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 167,
+          "y": 52,
+          "locked": false
+        }
       }
     ],
+    "onOpen": {
+      "name": "InvintoryFakeThisGUIIsOpened"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

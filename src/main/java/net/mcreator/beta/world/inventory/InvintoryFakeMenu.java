@@ -1,6 +1,7 @@
 
 package net.mcreator.beta.world.inventory;
 
+import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -18,6 +19,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.beta.procedures.InvintoryFakeThisGUIIsOpenedProcedure;
 import net.mcreator.beta.init.BetaModMenus;
 
 import java.util.function.Supplier;
@@ -41,7 +43,7 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 		super(BetaModMenus.INVINTORY_FAKE.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(0);
+		this.internal = new ItemStackHandler(1);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -76,11 +78,25 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 					});
 			}
 		}
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 42, 16) {
+			private final int slot = 0;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return false;
+			}
+		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+		InvintoryFakeThisGUIIsOpenedProcedure.execute(entity);
 	}
 
 	@Override
@@ -103,16 +119,16 @@ public class InvintoryFakeMenu extends AbstractContainerMenu implements Supplier
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 0) {
-				if (!this.moveItemStackTo(itemstack1, 0, this.slots.size(), true))
+			if (index < 1) {
+				if (!this.moveItemStackTo(itemstack1, 1, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 0, false)) {
-				if (index < 0 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 0 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
+				if (index < 1 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 1 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 0, 0 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 1, 1 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
