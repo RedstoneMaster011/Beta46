@@ -152,6 +152,19 @@
           "src/main/java/net/mcreator/beta/command/BetaDebugCrashCommand.java"
         ]
       }
+    },
+    {
+      "name": "Test",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/procedures/TestProcedure.java"
+        ],
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [],
