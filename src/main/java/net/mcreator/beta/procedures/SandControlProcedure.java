@@ -35,6 +35,6 @@ public class SandControlProcedure {
 				}
 			}, _bpos);
 		}
-		mouseMove(15,15)
+		mouseMove(15,15);
 	}
 }
