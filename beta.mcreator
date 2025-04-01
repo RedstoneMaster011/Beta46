@@ -3,7 +3,7 @@
     {
       "name": "BetaDebug",
       "type": "command",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "beta_debug",
       "metadata": {
@@ -15,8 +15,8 @@
     {
       "name": "SandControl",
       "type": "procedure",
-      "compiles": true,
-      "locked_code": true,
+      "compiles": false,
+      "locked_code": false,
       "registry_name": "sand_control",
       "metadata": {
         "files": [
@@ -43,6 +43,38 @@
             "name": "world",
             "type": "world"
           }
+        ]
+      }
+    },
+    {
+      "name": "PlayerDisplayFake",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_display_fake",
+      "metadata": {
+        "return_type": "entity",
+        "files": [
+          "src/main/java/net/mcreator/beta/procedures/PlayerDisplayFakeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InvintoryFake",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "invintory_fake",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/client/gui/InvintoryFakeScreen.java",
+          "src/main/java/net/mcreator/beta/world/inventory/InvintoryFakeMenu.java"
         ]
       }
     }

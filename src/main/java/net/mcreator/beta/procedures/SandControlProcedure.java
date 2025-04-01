@@ -13,8 +13,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.beta.world.inventory.TMenu;
-
 import io.netty.buffer.Unpooled;
 
 public class SandControlProcedure {
@@ -26,7 +24,7 @@ public class SandControlProcedure {
 			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("inventory");
+					return Component.literal("T");
 				}
 
 				@Override
@@ -35,6 +33,5 @@ public class SandControlProcedure {
 				}
 			}, _bpos);
 		}
-		mouseMove(15,15);
 	}
 }
