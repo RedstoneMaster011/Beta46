@@ -1,5 +1,52 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "BetaDebug",
+      "type": "command",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "beta_debug",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/command/BetaDebugCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "SandControl",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sand_control",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/procedures/SandControlProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {},
