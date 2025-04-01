@@ -32,7 +32,7 @@ public class BetaDebugCrashCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					PlayerCrashProcedure.execute(world, x, y, z);
+					PlayerCrashProcedure.execute(entity);
 					return 0;
 				}));
 	}
