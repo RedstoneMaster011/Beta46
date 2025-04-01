@@ -73,6 +73,7 @@
       "registry_name": "invintory_fake",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/beta/network/InvintoryFakeSlotMessage.java",
           "src/main/java/net/mcreator/beta/client/gui/InvintoryFakeScreen.java",
           "src/main/java/net/mcreator/beta/world/inventory/InvintoryFakeMenu.java"
         ]
@@ -96,6 +97,24 @@
           {
             "name": "world",
             "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Take",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "take",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/procedures/TakeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }
