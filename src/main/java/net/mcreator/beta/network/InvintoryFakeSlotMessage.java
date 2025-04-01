@@ -72,7 +72,7 @@ public class InvintoryFakeSlotMessage {
 			return;
 		if (slot == 0 && changeType == 1) {
 
-			TakeProcedure.execute(entity);
+			TakeProcedure.execute(world, entity);
 		}
 	}
 
