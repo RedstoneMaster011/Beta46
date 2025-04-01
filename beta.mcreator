@@ -122,6 +122,48 @@
           }
         ]
       }
+    },
+    {
+      "name": "PlayerCrash",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_crash",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/procedures/PlayerCrashProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BetaDebugCrash",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "beta_debug_crash",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/beta/command/BetaDebugCrashCommand.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
